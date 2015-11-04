@@ -13,11 +13,11 @@ import java.time.LocalDate;
  */
 public class Income {
    private double amount;
-   private IncomeSource source;
+   private String source;
    private String date;
    private String month; 
 
-    public Income(double amount, IncomeSource source, String date, String month) {
+    public Income(double amount, String source, String date, String month) {
         this.amount = amount;
         this.source = source;
         this.date = date;
@@ -28,7 +28,7 @@ public class Income {
         return amount;
     }
 
-    public IncomeSource getSource() {
+    public String getSource() {
         return source;
     }
 
@@ -39,4 +39,10 @@ public class Income {
     public String getMonth() {
         return month;
     } 
+
+    @Override
+    public String toString() {
+        return date + "   " + amount + "                 " + source;
+    }
+    
 }

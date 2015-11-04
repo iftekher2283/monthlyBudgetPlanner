@@ -13,11 +13,14 @@ import java.time.LocalDate;
  */
 public class Expense {
     private double amount;
-    private ExpenseCategory category;
+    private String category;
     private String date;
     private String month;
 
-    public Expense(double amount, ExpenseCategory category, String date, String month) {
+    public Expense() {
+    }
+
+    public Expense(double amount, String category, String date, String month) {
         this.amount = amount;
         this.category = category;
         this.date = date;
@@ -28,7 +31,7 @@ public class Expense {
         return amount;
     }
 
-    public ExpenseCategory getCategory() {
+    public String getCategory() {
         return category;
     }
 
@@ -39,4 +42,10 @@ public class Expense {
     public String getMonth() {
         return month;
     }
+
+    @Override
+    public String toString() {
+        return date + "   " + amount + "                 " + category;
+    }
+    
 }
